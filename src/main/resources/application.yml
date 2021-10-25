@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    database: mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog/?serverTimezone=Asia/Seoul
+    username: bin
+    password: 0819
+
+server:
+  port: 9999
+
+
