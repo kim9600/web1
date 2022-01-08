@@ -1,13 +1,41 @@
-spring:
-  jpa:
-    database: mysql
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog/?serverTimezone=Asia/Seoul
-    username: bin
-    password: 0819
-
 server:
   port: 9999
+  servlet:
+    context-path: /blog
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog
+    username: bin
+    password: phw0819!
+
+
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
+      #false -> jpa 기본전략 넘버링전략을 따라가지않겟다
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
 
 
